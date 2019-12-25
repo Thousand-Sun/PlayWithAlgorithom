@@ -15,6 +15,17 @@ public class MaxHeap {
         this.capacity = capacity;
     }
 
+    public MaxHeap(int[] arr){
+        capacity = arr.length;
+        data = new int[capacity+1];
+        System.arraycopy(arr, 0, data, 1, capacity);
+        count = capacity;
+        for (int i = count/2; i >= 1 ; i--) {
+            shiftDown(i);
+        }
+//        System.out.println(Arrays.toString(data));
+    }
+
     public int size(){
         return count;
     }
@@ -76,6 +87,8 @@ public class MaxHeap {
         for (int i = 0; i < 10; i++) {
             System.out.print(maxHeap.pushOut() + " ");
         }
+        int[] arr = new int[]{8,4,7,5,6,3,25,1};
+        MaxHeap temp = new MaxHeap(arr);
     }
 }
 

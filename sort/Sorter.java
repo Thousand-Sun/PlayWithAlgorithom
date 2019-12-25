@@ -2,6 +2,7 @@ package sort;
 
 import java.util.Arrays;
 import java.util.Random;
+import heap.MaxHeap;
 
 public class Sorter {
 
@@ -292,6 +293,64 @@ public class Sorter {
         swap(arr,l,lt);
         __quickSort3Ways(arr,l,lt-1);
         __quickSort3Ways(arr,gt,r);
+    }
+
+    //--------------------堆排序---------------------------
+    public void heapSort1(int[] arr){
+        System.out.println(Arrays.toString(arr));
+        long startTime=System.nanoTime();
+        MaxHeap maxHeap = new MaxHeap(arr.length);
+        for (int value : arr) {
+            maxHeap.insert(value);
+        }
+        for (int i = arr.length-1; i >= 0; i--) {
+            arr[i] = maxHeap.pushOut();
+        }
+        long endTime=System.nanoTime();
+        System.out.println(Arrays.toString(arr));
+        System.out.println("堆排序1时间： "+(endTime-startTime)+"ns");
+    }
+
+    public void heapSort2(int[] arr){
+        System.out.println(Arrays.toString(arr));
+        long startTime=System.nanoTime();
+        MaxHeap maxHeap = new MaxHeap(arr);
+        for (int i = arr.length-1; i >= 0; i--) {
+            arr[i] = maxHeap.pushOut();
+        }
+        long endTime=System.nanoTime();
+        System.out.println(Arrays.toString(arr));
+        System.out.println("堆排序2时间： "+(endTime-startTime)+"ns");
+    }
+
+    public void heapSort(int[] arr){
+        System.out.println(Arrays.toString(arr));
+        long startTime=System.nanoTime();
+        int n = arr.length-1;
+        for (int i = (n-1)/2; i >= 0; i--) {
+            __shiftDown(arr,n,i);
+        }
+//        System.out.println(Arrays.toString(arr));
+        int v = arr.length-1;
+        while (v>0) {
+            swap(arr,0,v);
+            v--;
+            __shiftDown(arr,v,0);
+        }
+        long endTime=System.nanoTime();
+        System.out.println(Arrays.toString(arr));
+        System.out.println("堆排序时间： "+(endTime-startTime)+"ns");
+    }
+    private void __shiftDown(int[] arr,int n,int i) {
+        while(i*2+1 <= n){
+            int j = i*2+1;
+            if (j+1 <= n && arr[j+1] > arr[j]){
+                j+=1;
+            }
+            if (arr[i] >= arr[j]) break;
+            swap(arr,i,j);
+            i = j;
+        }
     }
 }
 
