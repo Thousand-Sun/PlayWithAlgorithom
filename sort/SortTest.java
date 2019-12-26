@@ -9,7 +9,7 @@ public class SortTest {
 //        int[] arr = sortTestHelper.generateRandomArray(1000,1,1000);
 //        int[] arr = sortTestHelper.generateOrderArray(10,1);
 //        int[] arr = sortTestHelper.generateNearlyOrderArray(1000,1,10);
-        int[] arr = new int[]{3,4,2,4,5,2,1,6,2,1};
+        int[] arr = new int[]{3,4,2,4,5,2,1,6,2,1,7,5,8};
         int[] arr1 = sortTestHelper.copyArray(arr);
         int[] arr2 = sortTestHelper.copyArray(arr);
         int[] arr3 = sortTestHelper.copyArray(arr);

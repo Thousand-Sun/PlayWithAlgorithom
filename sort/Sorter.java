@@ -342,15 +342,17 @@ public class Sorter {
         System.out.println("堆排序时间： "+(endTime-startTime)+"ns");
     }
     private void __shiftDown(int[] arr,int n,int i) {
+        int temp = arr[i];
         while(i*2+1 <= n){
             int j = i*2+1;
             if (j+1 <= n && arr[j+1] > arr[j]){
                 j+=1;
             }
-            if (arr[i] >= arr[j]) break;
-            swap(arr,i,j);
+            if (temp >= arr[j]) break;
+            arr[i] = arr[j];
             i = j;
         }
+        arr[i] = temp;
     }
 }
 
