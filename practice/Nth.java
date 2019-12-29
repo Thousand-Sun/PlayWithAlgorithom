@@ -1,6 +1,5 @@
-package application;
+package practice;
 
-import java.util.Arrays;
 import java.util.Random;
 import sort.Sorter;
 
