@@ -179,10 +179,9 @@ public class BinarySearchTree {
         deleteMin(root);
     }
     private void deleteMin(Node node){
-        if (node.left == null){
-            node = node.right;
-            if(node != null)
-                node = null;
+        if (node.left.left == null){
+            node.left = node.left.right;
+            node = null;
             count--;
         }
         else
@@ -259,7 +258,8 @@ public class BinarySearchTree {
         for (int i = 0; i < keys.length; i++) {
             binarySearchTree.insert(keys[i],i);
         }
-        binarySearchTree.remove(24);
+        binarySearchTree.deleteMin();
+        binarySearchTree.deleteMin();
         binarySearchTree.preOrder();
     }
 }
