@@ -10,7 +10,7 @@ public class DenseGraph implements Graph{
     private boolean directed;
     private boolean[][] g;
 
-    DenseGraph(int n,boolean directed){
+    public DenseGraph(int n, boolean directed){
         assert n >= 0;
         this.n = n;
         this.m = 0;
