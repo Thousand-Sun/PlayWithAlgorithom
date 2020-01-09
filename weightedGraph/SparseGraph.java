@@ -63,8 +63,7 @@ public class SparseGraph implements Graph {
     }
     public void traverseAdjacentEdge(int v){
         Iterable<Edge> adj = adjIterator(0);
-        for (Iterator<Edge> it = adj.iterator(); it.hasNext(); ) {
-            Edge i = it.next();
+        for (Edge i : adj) {
             System.out.print(i.w() + " ");
         }
     }
