@@ -12,7 +12,7 @@ public class GraphMain {
         sparseGraph.addEdge(1,3,1.5);
         sparseGraph.addEdge(4,2,3);
         sparseGraph.addEdge(4,3,2);
-        sparseGraph.addEdge(4,6,2.5);
+        sparseGraph.addEdge(4,6,2);
         sparseGraph.show();
         sparseGraph.traverseAdjacentEdge(0);
         System.out.println(sparseGraph.hasEdge(1,2));
