@@ -7,7 +7,7 @@ public class UnionFind {
     private int[] id;
     private int count;
 
-    UnionFind(int n){
+    public UnionFind(int n){
         count = n;
         id = new int[n];
         for (int i = 0; i < n; i++) {
@@ -24,11 +24,11 @@ public class UnionFind {
         return id[p];
     }
 
-    boolean isConnect(int p,int q){
+    public boolean isConnect(int p,int q){
         return find(p) == find(q);
     }
 
-    void unionElements(int p, int q){
+    public void unionElements(int p, int q){
         int pId = find(p);
         int qId = find(q);
         if (pId == qId)

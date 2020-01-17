@@ -14,7 +14,7 @@ public class PrimMST<Item extends Number & Comparable> {
 
     public PrimMST(Graph g){
         this.G = g;
-        ipq = new IndexMinHeap<Item>(g.E());
+        ipq = new IndexMinHeap<Item>(g.V());
         edgeTo = new Edge[g.V()];
         marked = new boolean[g.V()];//标记和每标记分别为两个不同的切分
         mst = new Vector<>(g.V());

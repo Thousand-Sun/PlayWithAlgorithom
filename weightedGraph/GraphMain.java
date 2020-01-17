@@ -18,16 +18,23 @@ public class GraphMain {
         System.out.println(sparseGraph.hasEdge(1,2));
 
         LazyPrimMST lazyprimMST = new LazyPrimMST(sparseGraph);
-        lazyprimMST.showMinScanTree();
         long startTime=System.nanoTime();
+        lazyprimMST.showMinScanTree();
         System.out.println(lazyprimMST.getMstWeight());
         long endTime=System.nanoTime();
         System.out.println((endTime-startTime)+"ns");
 
         PrimMST primMST = new PrimMST(sparseGraph);
-        primMST.showMinScanTree();
         startTime=System.nanoTime();
+        primMST.showMinScanTree();
         System.out.println(primMST.getMstWeight());
+        endTime=System.nanoTime();
+        System.out.println((endTime-startTime)+"ns");
+
+        KruskalMST kruskalMST = new KruskalMST(sparseGraph);
+        startTime=System.nanoTime();
+        kruskalMST.showMinScanTree();
+        System.out.println(kruskalMST.getMstWeight());
         endTime=System.nanoTime();
         System.out.println((endTime-startTime)+"ns");
 
